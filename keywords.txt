@@ -1,0 +1,88 @@
+####################################
+# Syntax Coloring Map For Mini WiFi
+####################################
+
+####################################
+# Datatypes (KEYWORD1)
+####################################
+
+CustWiFi                    KEYWORD1
+
+####################################
+# Methods and Functions (KEYWORD2)
+####################################
+
+pingModule                  KEYWORD2
+reset                       KEYWORD2
+setBaud                     KEYWORD2
+getChipID                   KEYWORD2
+getVcc                      KEYWORD2
+connectWiFi                 KEYWORD2
+disconnectWiFi              KEYWORD2
+getStatus                   KEYWORD2
+getIPConfig                 KEYWORD2
+setIPConfig                 KEYWORD2
+getHostname                 KEYWORD2
+setHostname                 KEYWORD2
+getMAC                      KEYWORD2
+setMAC                      KEYWORD2
+connectTCP                  KEYWORD2
+connectedTCP                KEYWORD2
+closeTCP                    KEYWORD2
+availableTCP                KEYWORD2
+writeTCP                    KEYWORD2
+readTCP                     KEYWORD2
+connectSSL                  KEYWORD2
+connectedSSL                KEYWORD2
+closeSSL                    KEYWORD2
+availableSSL                KEYWORD2
+writeSSL                    KEYWORD2
+readSSL                     KEYWORD2
+sendUDP                     KEYWORD2
+listenUDP                   KEYWORD2
+stopUDP                     KEYWORD2
+readUDP                     KEYWORD2
+listenTCP                   KEYWORD2
+stopTCP                     KEYWORD2
+acceptTCP                   KEYWORD2
+httpOpen                    KEYWORD2
+httpsOpen                   KEYWORD2
+httpLength                  KEYWORD2
+httpAvailable               KEYWORD2
+httpRead                    KEYWORD2
+httpClose                   KEYWORD2
+mdnsEnable                  KEYWORD2
+mdnsAddService              KEYWORD2
+mdnsAddServiceTXT           KEYWORD2
+mdnsQueryService            KEYWORD2
+mdnsGetQueryResult          KEYWORD2
+ssdpEnable                  KEYWORD2
+ssdpDisableWS               KEYWORD2
+ssdpSetOption               KEYWORD2
+
+####################################
+# Constants (LITERAL1)
+####################################
+
+WIFI_CONF_LOCALIP           LITERAL1
+WIFI_CONF_GATEWAYIP         LITERAL1
+WIFI_CONF_SUBNET            LITERAL1
+WIFI_CONF_DNS1              LITERAL1
+WIFI_CONF_DNS2              LITERAL1
+WIFI_IDLE_STATUS            LITERAL1
+WIFI_NO_SSID_AVAIL          LITERAL1
+WIFI_SCAN_COMPLETED         LITERAL1
+WIFI_CONNECTED              LITERAL1
+WIFI_CONNECT_FAILED         LITERAL1
+WIFI_CONNECTION_LOST        LITERAL1
+WIFI_DISCONNECTED           LITERAL1
+WIFI_SSDP_DEVICE_TYPE       LITERAL1
+WIFI_SSDP_NAME              LITERAL1
+WIFI_SSDP_URL               LITERAL1
+WIFI_SSDP_SCHEMA_URL        LITERAL1
+WIFI_SSDP_SN                LITERAL1
+WIFI_SSDP_MODEL_NAME        LITERAL1
+WIFI_SSDP_MODEL_NUMBER      LITERAL1
+WIFI_SSDP_MODEL_URL         LITERAL1
+WIFI_SSDP_MANUFACTURER      LITERAL1
+WIFI_SSDP_MANUFACTURER_URL  LITERAL1

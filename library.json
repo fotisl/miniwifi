@@ -1,0 +1,22 @@
+{
+  "name": "MiniWiFi",
+  "keywords": "wifi, esp8266",
+  "description": "Arduino Library for communicating with the ESP8266 MiniWiFi firmware",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/fotisl/miniwifi.git"
+  },
+  "authors":
+  [
+    {
+      "name": "Fotis Loukos",
+      "email": "me@fotisl.com",
+      "url": "http://www.fotisl.com",
+      "maintainer": true
+    }
+  ],
+  "version": "1.0.0",
+  "frameworks": "arduino",
+  "platforms": "*"
+}
