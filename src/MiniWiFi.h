@@ -1,5 +1,5 @@
-#ifndef CustWiFi_h
-#define CustWiFi_h
+#ifndef MiniWiFi_h
+#define MiniWiFi_h
 
 #include <Arduino.h>
 
