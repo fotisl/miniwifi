@@ -61,6 +61,8 @@ class MiniWiFi
         int8_t closeTCP(uint8_t s);
         int8_t availableTCP(uint8_t s);
         int8_t writeTCP(uint8_t s, uint8_t *data, uint8_t len);
+        int8_t printTCP(uint8_t s, char *str);
+        int8_t printTCP(uint8_t s, const __FlashStringHelper *str);
         int8_t readTCP(uint8_t s);
         int8_t readTCP(uint8_t s, uint8_t *data, uint8_t len);
 
@@ -69,10 +71,14 @@ class MiniWiFi
         int8_t closeSSL(uint8_t s);
         int8_t availableSSL(uint8_t s);
         int8_t writeSSL(uint8_t s, uint8_t *data, uint8_t len);
+        int8_t printSSL(uint8_t s, char *str);
+        int8_t printSSL(uint8_t s, const __FlashStringHelper *str);
         int8_t readSSL(uint8_t s);
         int8_t readSSL(uint8_t s, uint8_t *data, uint8_t len);
 
         void sendUDP(char *host, uint16_t port, uint8_t *data, uint8_t len);
+        void printUDP(char *host, uint16_t port, char *str);
+        void printUDP(char *host, uint16_t port, const __FlashStringHelper *str);
         int8_t listenUDP(uint16_t port);
         void stopUDP();
         uint8_t readUDP(uint8_t *data);
@@ -104,7 +110,9 @@ class MiniWiFi
         uint8_t readbuf(char *buf);
         void readstr(char *buf);
         void writebuf(char *buf, uint8_t len);
+        void writebuf(const __FlashStringHelper *buf, uint8_t len);
         void writestr(char *buf);
+        void writestr(const __FlashStringHelper *buf);
 
         int8_t singlefunc(uint8_t func);
         int8_t singlefunc8(uint8_t func, int8_t param1);

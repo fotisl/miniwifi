@@ -165,6 +165,30 @@ int8_t MiniWiFi::writeTCP(uint8_t s, uint8_t *data, uint8_t len)
     return ret;
 }
 
+int8_t MiniWiFi::printTCP(uint8_t s, char *str)
+{
+    int8_t ret;
+
+    stream->write((uint8_t) 0x24);
+    writebuf((char *) &s, 1);
+    writestr(str);
+    readbuf((char *) &ret);
+
+    return ret;
+}
+
+int8_t MiniWiFi::printTCP(uint8_t s, const __FlashStringHelper *str)
+{
+    int8_t ret;
+
+    stream->write((uint8_t) 0x24);
+    writebuf((char *) &s, 1);
+    writestr(str);
+    readbuf((char *) &ret);
+
+    return ret;
+}
+
 int8_t MiniWiFi::readTCP(uint8_t s)
 {
     return singlefunc8(0x25, s);
@@ -222,6 +246,30 @@ int8_t MiniWiFi::writeSSL(uint8_t s, uint8_t *data, uint8_t len)
     return ret;
 }
 
+int8_t MiniWiFi::printSSL(uint8_t s, char *str)
+{
+    int8_t ret;
+
+    stream->write((uint8_t) 0x34);
+    writebuf((char *) &s, 1);
+    writestr(str);
+    readbuf((char *) &ret);
+
+    return ret;
+}
+
+int8_t MiniWiFi::printSSL(uint8_t s, const __FlashStringHelper *str)
+{
+    int8_t ret;
+
+    stream->write((uint8_t) 0x34);
+    writebuf((char *) &s, 1);
+    writestr(str);
+    readbuf((char *) &ret);
+
+    return ret;
+}
+
 int8_t MiniWiFi::readSSL(uint8_t s)
 {
     return singlefunc8(0x35, s);
@@ -246,6 +294,22 @@ void MiniWiFi::sendUDP(char *host, uint16_t port, uint8_t *data, uint8_t len)
     writestr(host);
     writebuf((char *) &port, 2);
     writebuf((char *) data, len);
+}
+
+void MiniWiFi::printUDP(char *host, uint16_t port, char *str)
+{
+    stream->write((uint8_t) 0x40);
+    writestr(host);
+    writebuf((char *) &port, 2);
+    writestr(str);
+}
+
+void MiniWiFi::printUDP(char *host, uint16_t port, const __FlashStringHelper *str)
+{
+    stream->write((uint8_t) 0x40);
+    writestr(host);
+    writebuf((char *) &port, 2);
+    writestr(str);
 }
 
 int8_t MiniWiFi::listenUDP(uint16_t port)
@@ -463,9 +527,24 @@ void MiniWiFi::writebuf(char *buf, uint8_t len)
         stream->write(buf[i]);
 }
 
+void MiniWiFi::writebuf(const __FlashStringHelper *buf, uint8_t len)
+{
+    PGM_P p = reinterpret_cast<PGM_P>(buf);
+    uint8_t i;
+
+    stream->write(len);
+    for(i = 0; i < len; i++)
+        stream->write(pgm_read_byte(p++));
+}
+
 void MiniWiFi::writestr(char *buf)
 {
     writebuf(buf, strlen(buf));
+}
+
+void MiniWiFi::writestr(const __FlashStringHelper *buf)
+{
+    writebuf(buf, strlen_P((PGM_P) buf));
 }
 
 int8_t MiniWiFi::singlefunc(uint8_t func)
