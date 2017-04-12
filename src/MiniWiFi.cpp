@@ -55,6 +55,11 @@ uint16_t MiniWiFi::getVcc()
     return ret;
 }
 
+void MiniWiFi::clearInterrupt()
+{
+    stream->write((uint8_t) 0x05);
+}
+
 void MiniWiFi::connectWiFi(char *ssid, char *pass)
 {
     stream->write((uint8_t) 0x10);
@@ -207,6 +212,22 @@ int8_t MiniWiFi::readTCP(uint8_t s, uint8_t *data, uint8_t len)
     return ret;
 }
 
+int8_t MiniWiFi::interruptTCP(uint8_t s, bool enable)
+{
+    int8_t ret, param;
+
+    if(enable)
+        param = 1;
+    else
+        param = 0;
+    stream->write((uint8_t) 0x27);
+    writebuf((char *) &s, 1);
+    writebuf((char *) &param, 1);
+    readbuf((char *) &ret);
+
+    return ret;
+}
+
 int8_t MiniWiFi::connectSSL(char *host, uint16_t port)
 {
     int8_t ret;
@@ -288,6 +309,22 @@ int8_t MiniWiFi::readSSL(uint8_t s, uint8_t *data, uint8_t len)
     return ret;
 }
 
+int8_t MiniWiFi::interruptSSL(uint8_t s, bool enable)
+{
+    int8_t ret, param;
+
+    if(enable)
+        param = 1;
+    else
+        param = 0;
+    stream->write((uint8_t) 0x37);
+    writebuf((char *) &s, 1);
+    writebuf((char *) &param, 1);
+    readbuf((char *) &ret);
+
+    return ret;
+}
+
 void MiniWiFi::sendUDP(char *host, uint16_t port, uint8_t *data, uint8_t len)
 {
     stream->write((uint8_t) 0x40);
@@ -357,6 +394,17 @@ int8_t MiniWiFi::stopTCP()
 int8_t MiniWiFi::acceptTCP()
 {
     return singlefunc(0x52);
+}
+
+int8_t MiniWiFi::interruptServer(bool enable)
+{
+    int8_t param;
+
+    if(enable)
+        param = 1;
+    else
+        param = 0;
+    return singlefunc8(0x53, param);
 }
 
 int8_t MiniWiFi::httpOpen(char *url)

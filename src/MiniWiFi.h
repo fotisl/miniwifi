@@ -45,6 +45,7 @@ class MiniWiFi
         void setBaud(uint32_t baud);
         uint32_t getChipID();
         uint16_t getVcc();
+        void clearInterrupt();
 
         void connectWiFi(char *ssid, char *pass);
         void disconnectWiFi();
@@ -65,6 +66,7 @@ class MiniWiFi
         int8_t printTCP(uint8_t s, const __FlashStringHelper *str);
         int8_t readTCP(uint8_t s);
         int8_t readTCP(uint8_t s, uint8_t *data, uint8_t len);
+        int8_t interruptTCP(uint8_t s, bool enable);
 
         int8_t connectSSL(char *host, uint16_t port);
         int8_t connectedSSL(uint8_t s);
@@ -75,6 +77,7 @@ class MiniWiFi
         int8_t printSSL(uint8_t s, const __FlashStringHelper *str);
         int8_t readSSL(uint8_t s);
         int8_t readSSL(uint8_t s, uint8_t *data, uint8_t len);
+        int8_t interruptSSL(uint8_t s, bool enable);
 
         void sendUDP(char *host, uint16_t port, uint8_t *data, uint8_t len);
         void printUDP(char *host, uint16_t port, char *str);
@@ -86,6 +89,7 @@ class MiniWiFi
         int8_t listenTCP(uint16_t port);
         int8_t stopTCP();
         int8_t acceptTCP();
+        int8_t interruptServer(bool enable);
 
         int8_t httpOpen(char *url);
         int8_t httpsOpen(char *url, char *fingerprint);
