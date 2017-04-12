@@ -58,26 +58,26 @@ class MiniWiFi
         void setMAC(uint8_t mac[6]);
 
         int8_t connectTCP(char *host, uint16_t port);
-        int8_t connectedTCP(uint8_t s);
-        int8_t closeTCP(uint8_t s);
-        int8_t availableTCP(uint8_t s);
-        int8_t writeTCP(uint8_t s, uint8_t *data, uint8_t len);
-        int8_t printTCP(uint8_t s, char *str);
-        int8_t printTCP(uint8_t s, const __FlashStringHelper *str);
-        int8_t readTCP(uint8_t s);
-        int8_t readTCP(uint8_t s, uint8_t *data, uint8_t len);
-        int8_t interruptTCP(uint8_t s, bool enable);
+        int8_t connectedTCP(int8_t s);
+        int8_t closeTCP(int8_t s);
+        int8_t availableTCP(int8_t s);
+        int8_t writeTCP(int8_t s, uint8_t *data, uint8_t len);
+        int8_t printTCP(int8_t s, char *str);
+        int8_t printTCP(int8_t s, const __FlashStringHelper *str);
+        int8_t readTCP(int8_t s);
+        int8_t readTCP(int8_t s, uint8_t *data, uint8_t len);
+        int8_t interruptTCP(int8_t s, bool enable);
 
         int8_t connectSSL(char *host, uint16_t port);
-        int8_t connectedSSL(uint8_t s);
-        int8_t closeSSL(uint8_t s);
-        int8_t availableSSL(uint8_t s);
-        int8_t writeSSL(uint8_t s, uint8_t *data, uint8_t len);
-        int8_t printSSL(uint8_t s, char *str);
-        int8_t printSSL(uint8_t s, const __FlashStringHelper *str);
-        int8_t readSSL(uint8_t s);
-        int8_t readSSL(uint8_t s, uint8_t *data, uint8_t len);
-        int8_t interruptSSL(uint8_t s, bool enable);
+        int8_t connectedSSL(int8_t s);
+        int8_t closeSSL(int8_t s);
+        int8_t availableSSL(int8_t s);
+        int8_t writeSSL(int8_t s, uint8_t *data, uint8_t len);
+        int8_t printSSL(int8_t s, char *str);
+        int8_t printSSL(int8_t s, const __FlashStringHelper *str);
+        int8_t readSSL(int8_t s);
+        int8_t readSSL(int8_t s, uint8_t *data, uint8_t len);
+        int8_t interruptSSL(int8_t s, bool enable);
 
         void sendUDP(char *host, uint16_t port, uint8_t *data, uint8_t len);
         void printUDP(char *host, uint16_t port, char *str);

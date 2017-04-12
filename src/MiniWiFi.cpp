@@ -143,22 +143,22 @@ int8_t MiniWiFi::connectTCP(char *host, uint16_t port)
     return ret;
 }
 
-int8_t MiniWiFi::connectedTCP(uint8_t s)
+int8_t MiniWiFi::connectedTCP(int8_t s)
 {
     return singlefunc8(0x21, s);
 }
 
-int8_t MiniWiFi::closeTCP(uint8_t s)
+int8_t MiniWiFi::closeTCP(int8_t s)
 {
     return singlefunc8(0x22, s);
 }
 
-int8_t MiniWiFi::availableTCP(uint8_t s)
+int8_t MiniWiFi::availableTCP(int8_t s)
 {
     return singlefunc8(0x23, s);
 }
 
-int8_t MiniWiFi::writeTCP(uint8_t s, uint8_t *data, uint8_t len)
+int8_t MiniWiFi::writeTCP(int8_t s, uint8_t *data, uint8_t len)
 {
     int8_t ret;
 
@@ -170,7 +170,7 @@ int8_t MiniWiFi::writeTCP(uint8_t s, uint8_t *data, uint8_t len)
     return ret;
 }
 
-int8_t MiniWiFi::printTCP(uint8_t s, char *str)
+int8_t MiniWiFi::printTCP(int8_t s, char *str)
 {
     int8_t ret;
 
@@ -182,7 +182,7 @@ int8_t MiniWiFi::printTCP(uint8_t s, char *str)
     return ret;
 }
 
-int8_t MiniWiFi::printTCP(uint8_t s, const __FlashStringHelper *str)
+int8_t MiniWiFi::printTCP(int8_t s, const __FlashStringHelper *str)
 {
     int8_t ret;
 
@@ -194,12 +194,12 @@ int8_t MiniWiFi::printTCP(uint8_t s, const __FlashStringHelper *str)
     return ret;
 }
 
-int8_t MiniWiFi::readTCP(uint8_t s)
+int8_t MiniWiFi::readTCP(int8_t s)
 {
     return singlefunc8(0x25, s);
 }
 
-int8_t MiniWiFi::readTCP(uint8_t s, uint8_t *data, uint8_t len)
+int8_t MiniWiFi::readTCP(int8_t s, uint8_t *data, uint8_t len)
 {
     int8_t ret;
 
@@ -212,7 +212,7 @@ int8_t MiniWiFi::readTCP(uint8_t s, uint8_t *data, uint8_t len)
     return ret;
 }
 
-int8_t MiniWiFi::interruptTCP(uint8_t s, bool enable)
+int8_t MiniWiFi::interruptTCP(int8_t s, bool enable)
 {
     int8_t ret, param;
 
@@ -240,22 +240,22 @@ int8_t MiniWiFi::connectSSL(char *host, uint16_t port)
     return ret;
 }
 
-int8_t MiniWiFi::connectedSSL(uint8_t s)
+int8_t MiniWiFi::connectedSSL(int8_t s)
 {
     return singlefunc8(0x31, s);
 }
 
-int8_t MiniWiFi::closeSSL(uint8_t s)
+int8_t MiniWiFi::closeSSL(int8_t s)
 {
     return singlefunc8(0x32, s);
 }
 
-int8_t MiniWiFi::availableSSL(uint8_t s)
+int8_t MiniWiFi::availableSSL(int8_t s)
 {
     return singlefunc8(0x33, s);
 }
 
-int8_t MiniWiFi::writeSSL(uint8_t s, uint8_t *data, uint8_t len)
+int8_t MiniWiFi::writeSSL(int8_t s, uint8_t *data, uint8_t len)
 {
     int8_t ret;
 
@@ -267,7 +267,7 @@ int8_t MiniWiFi::writeSSL(uint8_t s, uint8_t *data, uint8_t len)
     return ret;
 }
 
-int8_t MiniWiFi::printSSL(uint8_t s, char *str)
+int8_t MiniWiFi::printSSL(int8_t s, char *str)
 {
     int8_t ret;
 
@@ -279,7 +279,7 @@ int8_t MiniWiFi::printSSL(uint8_t s, char *str)
     return ret;
 }
 
-int8_t MiniWiFi::printSSL(uint8_t s, const __FlashStringHelper *str)
+int8_t MiniWiFi::printSSL(int8_t s, const __FlashStringHelper *str)
 {
     int8_t ret;
 
@@ -291,12 +291,12 @@ int8_t MiniWiFi::printSSL(uint8_t s, const __FlashStringHelper *str)
     return ret;
 }
 
-int8_t MiniWiFi::readSSL(uint8_t s)
+int8_t MiniWiFi::readSSL(int8_t s)
 {
     return singlefunc8(0x35, s);
 }
 
-int8_t MiniWiFi::readSSL(uint8_t s, uint8_t *data, uint8_t len)
+int8_t MiniWiFi::readSSL(int8_t s, uint8_t *data, uint8_t len)
 {
     int8_t ret;
 
@@ -309,7 +309,7 @@ int8_t MiniWiFi::readSSL(uint8_t s, uint8_t *data, uint8_t len)
     return ret;
 }
 
-int8_t MiniWiFi::interruptSSL(uint8_t s, bool enable)
+int8_t MiniWiFi::interruptSSL(int8_t s, bool enable)
 {
     int8_t ret, param;
 
